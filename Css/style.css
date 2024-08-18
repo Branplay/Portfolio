@@ -1,0 +1,1207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --main-bg-color: black;
+    --main-c-text: whitesmoke;
+}
+@font-face {
+    font-family: Monserrat;
+    src: url(../Resources/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: Monserratsub;
+    src: url(../Resources/fonts/MontserratSubrayada-Regular.ttf);
+}
+html{
+    scroll-behavior: smooth;
+}
+header {
+    width: 100%;
+    height: 15vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: solid 2px var(--main-c-text);
+}
+.logo img {
+    max-width: 16vh;
+}
+.logo {
+    width: 12%;
+    height: 100%;
+    overflow: hidden;
+}
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: whitesmoke;
+    gap: 1vh;
+    font-family: Monserratsub, sans-serif;
+}
+.name {
+    padding-right: 3%;
+}
+.cv {
+    text-decoration: none;
+    color: var(--main-c-text);
+    background-color: black;
+    cursor: pointer;
+    padding: 16px 32px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+    z-index: 1;
+    transition: all .2s linear;
+    font-family: Monserratsub, sans-serif;
+}
+.cv::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+            red, blue, deeppink, blue, green, yellow,
+            red, blue, deeppink, blue);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+.cv:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+.cv:active {
+    text-shadow: 0px 0px 10px whitesmoke;
+}
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+nav {
+    width: 100%;
+    height: 5vh;
+    background-color: rgb(59, 59, 59);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    transition: all ease-out .3s;
+}
+nav:hover{
+    background-color: black;
+}
+nav a{
+    position: relative;
+    font-size: 1em;
+    display: inline-block;
+    color: var(--main-c-text);
+    font-family: Monserratsub, sans-serif;
+    text-decoration: none;
+    padding: 100% 23px;
+    z-index: 1;
+    transition: all ease-out .3s;
+}
+nav a:hover{
+    text-shadow: 1px 0px 10px,
+    1px 0px 10px var(--main-c-text);
+    scale: 1.1;
+}
+.navresp{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+}
+.boton {
+    display: none;
+}
+main {
+    width: 100%;
+    height: auto;
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: center;
+}
+.allcontain {
+    width: 80%;
+    height: auto;
+    border: double 5px var(--main-c-text);
+}
+.yo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.fotografia {
+    width: 50%;
+    height: 30vh;
+    text-align: center;
+    overflow: hidden;
+}
+.fotografia img{
+    height: 100%;
+    filter: grayscale(100%);
+    transition: all .2s linear;
+    mask-image: linear-gradient(
+        black 80%, transparent
+    );
+}
+.fotografia img:hover{
+    filter: grayscale(0);
+    scale: 1.1;
+}
+.info {
+    width: 50%;
+    height: 30vh;
+    color: var(--main-c-text);
+    padding: 1%;
+    overflow: hidden;
+    font-family: Monserrat, sans-serif;
+    font-size: 1.2em;
+    display: grid;
+    align-items: center;
+}
+.proyectosdediseno {
+    text-align: center;
+    padding: 1%;
+    font-family: Monserratsub, sans-serif;
+    color: var(--main-c-text);
+    border-bottom: double 5px var(--main-c-text);
+}
+.designproyects {
+    display: flex;
+    justify-content: space-between;
+}
+.projetcinfo {
+    width: 50%;
+    height: 35vh;
+    text-align: center;
+    font-family: Monserrat, sans-serif;
+    padding: 1%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    color: var(--main-c-text);
+}
+.projectportada {
+    width: 50%;
+    height: 35vh;
+    background-color: rgb(201, 49, 125);
+    text-align: center;
+    overflow: hidden;
+    background-image: url(../Resources/images/ProjectJDM/NissanSilviaS15.gif);
+    background-size: cover;
+    background-position: center;
+    grid-template-areas: "silvia";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+}
+.projectportada::after {
+    content: "Silvia S15";
+    position: absolute;
+    grid-area: silvia;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #f0eee8;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top center);
+    transition: clip-path .4s;
+}
+.projectportada:hover::after {
+    clip-path: circle(150% at top center);
+}
+.allimages {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1%;
+}
+.allimages img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+}
+.allimages div {
+    width: 30%;
+    height: auto;
+}
+.carimg1 {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "car1";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+    border: outset 5px white;
+}
+.carimg1::after {
+    content: "300zx";
+    position: absolute;
+    grid-area: car1;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #ffc400;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top left);
+    transition: clip-path .4s;
+}
+.carimg1:hover::after {
+    clip-path: circle(150% at top left);
+}
+.carimg2 {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "car2";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+    border: outset 5px white;
+}
+.carimg2::after {
+    content: "370Z";
+    position: absolute;
+    grid-area: car2;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #ebe9e4;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top center);
+    transition: clip-path .4s;
+}
+.carimg2:hover::after {
+    clip-path: circle(150% at top center);
+}
+.carimg3 {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "car3";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+    border: outset 5px white;
+}
+.carimg3::after {
+    content: "GT 86";
+    position: absolute;
+    grid-area: car3;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #ff0037;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top right);
+    transition: clip-path .4s;
+}
+.carimg3:hover::after {
+    clip-path: circle(150% at top right);
+}
+.carimg4 {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "car4";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+    border: outset 5px white;
+}
+.carimg4::after {
+    content: "Eclipse 3g";
+    position: absolute;
+    grid-area: car4;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #e4e4e4;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top left);
+    transition: clip-path .4s;
+}
+.carimg4:hover::after {
+    clip-path: circle(150% at top left);
+}
+.carimg5 {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "car5";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+    border: outset 5px white;
+}
+.carimg5::after {
+    content: "Eclipse 4g";
+    position: absolute;
+    grid-area: car5;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #ff0000;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top center);
+    transition: clip-path .4s;
+}
+.carimg5:hover::after {
+    clip-path: circle(150% at top center);
+}
+.carimg6 {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "car6";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+    border: outset 5px white;
+}
+.carimg6::after {
+    content: "Honda Integra";
+    position: absolute;
+    grid-area: car6;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #f0ecec;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top right);
+    transition: clip-path .4s;
+}
+
+.carimg6:hover::after {
+    clip-path: circle(150% at top right);
+}
+.carimg7 {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "car7";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+    border: outset 5px white;
+}
+.carimg7::after {
+    content: "Nissan Z";
+    position: absolute;
+    grid-area: car7;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #d1cccc;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top left);
+    transition: clip-path .4s;
+}
+.carimg7:hover::after {
+    clip-path: circle(150% at top left);
+}
+.carimg8 {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "car8";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+    border: outset 5px white;
+}
+.carimg8::after {
+    content: "Honda NSX";
+    position: absolute;
+    grid-area: car8;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #db0231;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top center);
+    transition: clip-path .4s;
+}
+.carimg8:hover::after {
+    clip-path: circle(150% at top center);
+}
+.carimg9 {
+    display: grid;
+    grid-template: 1fr/1fr;
+    grid-template-areas: "car9";
+    font-family: Monserratsub, sans-serif;
+    position: relative;
+    border: outset 5px white;
+}
+.carimg9::after {
+    content: "Supra Mkv";
+    position: absolute;
+    grid-area: car9;
+    width: 100%;
+    height: 100%;
+    background-color: #000000a1;
+    color: #f0ecec;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;
+    clip-path: circle(0 at top right);
+    transition: clip-path .4s;
+}
+.carimg9:hover::after {
+    clip-path: circle(150% at top right);
+}
+.tecs {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 5%;
+}
+.tecs img {
+    height: 100px;
+}
+.merchjdm {
+    text-align: center;
+    padding: 1%;
+    font-family: Monserratsub, sans-serif;
+    color: var(--main-c-text);
+    border-bottom: double 5px var(--main-c-text);
+}
+.suchineon {
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.neonimg {
+    width: 50%;
+    height: 30vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.neonimg img {
+    width: 350px;
+    filter: drop-shadow(0px 0px 10px black);
+    transition: all .2s ease;
+}
+.neonimg img:hover{
+    scale: 1.1;
+}
+.neoninfo {
+    width: 50%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    overflow: hidden;
+    font-family: Monserrat, sans-serif;
+    font-size: 1.2em;
+    color: var(--main-c-text);
+}
+.logotecs {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+.logotecs img:first-child {
+    width: 135px;
+}
+.logotecs img:last-child {
+    width: 100px;
+}
+.responsivewir {
+    display: flex;
+    width: 100%;
+}
+.responimg {
+    width: 50%;
+    height: 30vh;
+    text-align: center;
+}
+.responimg img {
+    height: 100%;
+    padding: 1%;
+    border-radius: 20px;
+    transition: all .2s ease;
+}
+.responimg img:hover{
+    scale: 1.1;
+}
+.responinfo {
+    width: 50%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1%;
+    overflow: hidden;
+    font-family: Monserrat, sans-serif;
+    color: var(--main-c-text);
+    font-size: 1.2em;
+}
+.respontecs {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+.respontecs img:first-child {
+    width: 135px;
+}
+.respontecs img:nth-child(2) {
+    width: 100px;
+}
+.respontecs img:last-child {
+    width: 115px;
+}
+.idendrug {
+    text-align: center;
+    padding: 1%;
+    font-family: Monserratsub, sans-serif;
+    color: var(--main-c-text);
+}
+.drugland1 {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+.behance {
+    width: 50%;
+    height: 25vh;
+}
+.behance iframe {
+    width: 100%;
+    height: 100%;
+}
+.druginfo {
+    width: 50%;
+    height: 25vh;
+    padding: 1%;
+    text-align: center;
+    font-family: Monserrat, sans-serif;
+    color: var(--main-c-text);
+    font-size: 1.2em;
+    overflow: hidden;
+}
+.drugtecs {
+    width: 100%;
+    padding-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+}
+.drugtecs img:first-child {
+    width: 145px;
+}
+.drugtecs img:last-child {
+    width: 100px;
+}
+.otrosproyectos{
+    text-align: center;
+    padding: 1%;
+    font-family: Monserratsub, sans-serif;
+    color: var(--main-c-text);
+    border-bottom: double 5px var(--main-c-text);
+}
+.otrosd{
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.proyecto1{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: auto;
+    color: var(--main-c-text);
+}
+.linkoimg{
+    text-align: center;
+    position: relative;
+    height: 50%;
+}
+.corto {
+    text-decoration: none;
+    color: var(--main-c-text);
+    background-color: black;
+    cursor: pointer;
+    top: 50%;
+    padding: 20px 32px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+    z-index: 1;
+    transition: all .2s linear;
+    font-family: Monserratsub, sans-serif;
+}
+.corto::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+            red, blue, rgb(141, 20, 255), blue, green, yellow,
+            red, blue, purple, violet);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+.corto:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+.corto:active {
+    text-shadow: 0px 0px 10px whitesmoke;
+}
+.infop1{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    font-family: Monserrat, sans-serif;
+    color: var(--main-c-text);
+    font-size: 1em;
+    text-align: center;
+    justify-content: space-evenly;
+}
+.infop1 img{
+    height: 50%;
+    padding-top: 5%;
+}
+.proyecto2{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: auto;
+}
+.linkoimg2{
+    text-align: center;
+    position: relative;
+    height: 50%;
+}
+.doblaje {
+    text-decoration: none;
+    color: var(--main-c-text);
+    background-color: black;
+    cursor: pointer;
+    top: 50%;
+    padding: 20px 32px;
+    font-weight: bold;
+    position: relative;
+    border-radius: 12px;
+    z-index: 1;
+    transition: all .2s linear;
+    font-family: Monserratsub, sans-serif;
+}
+.doblaje::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,
+            red, blue, rgb(141, 20, 255), blue, green, yellow,
+            red, blue, purple, violet);
+    background-size: 800%;
+    border-radius: 10px;
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+}
+.doblaje:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+.doblaje:active {
+    text-shadow: 0px 0px 10px whitesmoke;
+}
+.infop2{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    font-family: Monserrat, sans-serif;
+    color: var(--main-c-text);
+    font-size: 1em;
+    text-align: center;
+    justify-content: space-evenly;
+}
+.infop2 img{
+    height: 50%;
+    padding-top: 5%;
+}
+.proyecto3{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    height: auto;
+}
+.linkoimg3{
+    text-align: center;
+    position: relative;
+    height: 50%;
+}
+.linkoimg3 img{
+    height: 100%;
+    border-radius: 10px;
+}
+.infop3{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 1%;
+    font-family: Monserrat, sans-serif;
+    color: var(--main-c-text);
+    font-size: 1em;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+.infop3 img{
+    height: 50%;
+    padding-top: 3%;
+}
+.contact{
+    text-align: center;
+    padding: 1%;
+    font-family: Monserratsub, sans-serif;
+    color: var(--main-c-text);
+    border-bottom: double 5px var(--main-c-text);
+}
+.containf{
+    display: flex;
+    justify-content: space-evenly;
+}
+footer {
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+.contactame{
+    width: 33%;
+    color: var(--main-c-text);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    font-family: Monserratsub, sans-serif;
+    padding-left: 2%;
+}
+.copybtn{
+    width: 100px;
+    height: 25px;
+    font-family: Monserrat, sans-serif;
+    border-radius: 8px;
+    color: var(--main-c-text);
+    background-color: black;
+    border: outset 2px var(--main-c-text);
+    transition: all .2s ease;
+}
+.copybtn:hover{
+    text-shadow: 1px 0px 10px, 1px 0px 10px  var(--main-c-text);
+}
+.copybtn:active{
+    background-color: var(--main-c-text);
+    color: var(--main-bg-color);
+}
+.navcontact{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 33%;
+}
+.navcontact a{
+    font-size: 1em;
+    color: var(--main-c-text);
+    font-family: Monserratsub, sans-serif;
+    text-decoration: none;
+    padding: 0 23px;
+    transition: all .2s ease;
+}
+.navcontact a:hover{
+    text-shadow: 1px 0px 10px, 1px 0px 10px var(--main-c-text);
+}
+.logof{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logof img{
+    width: 15vh;
+}
+@media screen and (max-width:480px) {
+    header{
+        flex-direction: column;
+        height: auto;
+    }
+    .logo img {
+        max-width: 16vh;
+    }
+    .logo {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+    }
+    .title {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 100px;
+        font-size: 0.9em;
+        padding: 2%;
+    }
+    .name {
+        padding-right: 3%;
+    }
+    .cv {
+        top: -50px;
+    }
+    .allcontain {
+        width: 100%;
+    }
+    .yo {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: column;
+        height: auto;
+    }
+    .fotografia {
+        width: 100%;
+        height: 40vh;
+        text-align: center;
+        overflow: hidden;
+    }
+    .fotografia img{
+        height: 100%;
+        filter: grayscale(100%);
+        transition: all .2s linear;
+        mask-image: linear-gradient(
+            black 80%, transparent
+        );
+    }
+    .fotografia img:hover{
+        filter: grayscale(0);
+        scale: 1.1;
+    }
+    .info {
+        width: 100%;
+        height: auto;
+        padding: 1%;
+        overflow: hidden;
+        font-size: 1.1em;
+        display: grid;
+        justify-content: center;
+        text-align: center;
+        padding: 1%;
+    }
+    .designproyects {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+    .projetcinfo {
+        width: 100%;
+        order: 1;
+        height: 35vh;
+        text-align: center;
+        padding: 1%;
+        padding-top: 10%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    .projectportada {
+        width: 100%;
+        height: 35vh;
+        order: 0;
+    }
+    .tecs {
+        align-items: center;
+    }
+    .allimages {
+        flex-direction: column;
+        align-items: center;
+    }
+    .allimages img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        height: auto;
+    }
+    .allimages div {
+        width: 80%;
+    }
+    .suchineon {
+        width: 100%;
+        flex-direction: column;
+    }
+    .neonimg {
+        width: 100%;
+        overflow: hidden;
+    }
+    .neoninfo {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    .responsivewir {
+        flex-direction: column;
+    }
+    .responimg {
+        width: 100%;
+        height: 30vh;
+        text-align: center;
+    }
+    .responinfo {
+        width: 100%;
+        text-align: center;
+    }
+    .drugland1 {
+        flex-direction: column;
+    }
+    .behance {
+        width: 100%;
+    }
+    .druginfo {
+        width: 100%;
+        height: 25vh;
+        padding: 1%;
+        text-align: center;
+        font-family: Monserrat, sans-serif;
+        color: var(--main-c-text);
+        font-size: 1.2em;
+        overflow: hidden;
+    }
+    .otrosd{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .proyecto1{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+    .linkoimg{
+        position: relative;
+        height: 100%;
+        margin-top: 15%;
+        top: -30px;
+    }
+    .infop1{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    .infop1 img{
+        height: 130px;
+    }
+    .proyecto2{
+        flex-direction: column;
+        width: 100%;
+    }
+    .linkoimg2{
+        top: 45px;
+    }
+    .infop2{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 1%;
+        margin-top: 15%;
+    }
+    .infop2 img{
+        height: 150px;
+    }
+    .proyecto3{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        margin-top: 5%;
+    }
+    .linkoimg3{
+        text-align: center;
+        position: relative;
+        height: 50%;
+    }
+    .linkoimg3 img{
+        width: 200px;
+        border-radius: 10px;
+    }
+    .infop3{
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 1%;
+        font-family: Monserrat, sans-serif;
+        color: var(--main-c-text);
+        font-size: 1em;
+        text-align: center;
+        align-items: center;
+        justify-content: space-evenly;
+        overflow: hidden;
+    }
+    .infop3 img{
+        height: 150px;
+        padding-top: 3%;
+    }
+    .containf{
+        flex-direction: column;
+    }
+    .contactame{
+        width: 100%;
+        color: var(--main-c-text);
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        font-family: Monserratsub, sans-serif;
+        padding-left: 2%;
+        margin-bottom: 5%;
+    }
+    .contactame div{
+        text-align: center;
+    }
+    .navcontact{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 10%;
+    }
+    .logof{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logof img{
+        width: 15vh;
+    }
+    nav {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        text-decoration: none;
+        position: relative;
+        overflow: visible;
+    }
+    
+    .nav-res {
+        display: block;
+        font-size: 1.5em;
+        text-decoration: none;
+        position: relative;
+        z-index: 100;
+        color: aliceblue;
+        padding: 10%;
+        transition: all .2s linear;
+    }
+    
+    .navresp {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        padding-right: 50%;
+        transition: all .5s ease;
+        top: 170%;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.367);
+        transition: all .2s linear;
+    }
+    .boton {
+        font-size: 2em;
+        text-decoration: none;
+        color: aliceblue;
+        position: relative;
+        z-index: 100;
+        display: block;
+        padding: 0px 23px;
+    }
+    .navrespvi {
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        align-items: start;
+        opacity: 100;
+        visibility: visible;
+        position: absolute;
+        top: 100%;
+        transition: all .2s linear;
+        background-color: rgba(0, 0, 0, 0.367);
+        z-index: 100;
+    }
+
+}
