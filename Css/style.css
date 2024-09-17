@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 :root {
-    --main-bg-color: black;
+    --main-bg-color: rgb(44, 44, 44);
     --main-c-text: whitesmoke;
 }
 @font-face {
@@ -21,7 +21,7 @@ html{
 header {
     width: 100%;
     height: 15vh;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(37, 37, 37);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -261,6 +261,7 @@ main {
     font-family: Monserratsub, sans-serif;
     position: relative;
     border: outset 5px white;
+    border-radius: 10px;
 }
 .carimg1::after {
     content: "300zx";
@@ -277,6 +278,7 @@ main {
     font-weight: bold;
     clip-path: circle(0 at top left);
     transition: clip-path .4s;
+    border-radius: 10px;
 }
 .carimg1:hover::after {
     clip-path: circle(150% at top left);
@@ -288,6 +290,7 @@ main {
     font-family: Monserratsub, sans-serif;
     position: relative;
     border: outset 5px white;
+    border-radius: 10px;
 }
 .carimg2::after {
     content: "370Z";
@@ -304,6 +307,7 @@ main {
     font-weight: bold;
     clip-path: circle(0 at top center);
     transition: clip-path .4s;
+    border-radius: 10px;
 }
 .carimg2:hover::after {
     clip-path: circle(150% at top center);
@@ -315,6 +319,7 @@ main {
     font-family: Monserratsub, sans-serif;
     position: relative;
     border: outset 5px white;
+    border-radius: 10px;
 }
 .carimg3::after {
     content: "GT 86";
@@ -331,6 +336,7 @@ main {
     font-weight: bold;
     clip-path: circle(0 at top right);
     transition: clip-path .4s;
+    border-radius: 10px;
 }
 .carimg3:hover::after {
     clip-path: circle(150% at top right);
@@ -342,6 +348,7 @@ main {
     font-family: Monserratsub, sans-serif;
     position: relative;
     border: outset 5px white;
+    border-radius: 10px;
 }
 .carimg4::after {
     content: "Eclipse 3g";
@@ -358,6 +365,7 @@ main {
     font-weight: bold;
     clip-path: circle(0 at top left);
     transition: clip-path .4s;
+    border-radius: 10px;
 }
 .carimg4:hover::after {
     clip-path: circle(150% at top left);
@@ -369,6 +377,7 @@ main {
     font-family: Monserratsub, sans-serif;
     position: relative;
     border: outset 5px white;
+    border-radius: 10px;
 }
 .carimg5::after {
     content: "Eclipse 4g";
@@ -385,6 +394,7 @@ main {
     font-weight: bold;
     clip-path: circle(0 at top center);
     transition: clip-path .4s;
+    border-radius: 10px;
 }
 .carimg5:hover::after {
     clip-path: circle(150% at top center);
@@ -396,6 +406,7 @@ main {
     font-family: Monserratsub, sans-serif;
     position: relative;
     border: outset 5px white;
+    border-radius: 10px;
 }
 .carimg6::after {
     content: "Honda Integra";
@@ -412,6 +423,7 @@ main {
     font-weight: bold;
     clip-path: circle(0 at top right);
     transition: clip-path .4s;
+    border-radius: 10px;
 }
 
 .carimg6:hover::after {
@@ -424,6 +436,7 @@ main {
     font-family: Monserratsub, sans-serif;
     position: relative;
     border: outset 5px white;
+    border-radius: 10px;
 }
 .carimg7::after {
     content: "Nissan Z";
@@ -440,6 +453,7 @@ main {
     font-weight: bold;
     clip-path: circle(0 at top left);
     transition: clip-path .4s;
+    border-radius: 10px;
 }
 .carimg7:hover::after {
     clip-path: circle(150% at top left);
@@ -451,6 +465,7 @@ main {
     font-family: Monserratsub, sans-serif;
     position: relative;
     border: outset 5px white;
+    border-radius: 10px;
 }
 .carimg8::after {
     content: "Honda NSX";
@@ -467,6 +482,7 @@ main {
     font-weight: bold;
     clip-path: circle(0 at top center);
     transition: clip-path .4s;
+    border-radius: 10px;
 }
 .carimg8:hover::after {
     clip-path: circle(150% at top center);
@@ -478,6 +494,7 @@ main {
     font-family: Monserratsub, sans-serif;
     position: relative;
     border: outset 5px white;
+    border-radius: 10px;
 }
 .carimg9::after {
     content: "Supra Mkv";
@@ -494,6 +511,7 @@ main {
     font-weight: bold;
     clip-path: circle(0 at top right);
     transition: clip-path .4s;
+    border-radius: 10px;
 }
 .carimg9:hover::after {
     clip-path: circle(150% at top right);
